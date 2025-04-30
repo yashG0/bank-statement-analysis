@@ -111,10 +111,9 @@ class StreamlitUiManagement:
                     # Summary
                     st.markdown("### Summary Insights")
                     summary = BankStatementManagement.get_summary(df)
-                    st.write(f"Max Deposit: ₹{summary['max_deposit']}")
-                    st.write(f"Min Deposit: ₹{summary['min_deposit']}")
-                    st.write(f"Max Withdrawal: ₹{summary['max_withdrawal']}")
-                    st.write(f"Min Withdrawal: ₹{summary['min_withdrawal']}")
+                    st.metric("Max Deposit", f"₹{summary['max_deposit']}")
+                    st.metric("Max Withdrawal", f"₹{summary['max_withdrawal']}")
+                    st.metric("Min Withdrawal", f"₹{summary['min_withdrawal']}")
                     st.write(f"Highest deposit occurred on: {summary['max_deposit_date'].strftime('%d-%b-%Y')}")
 
 
